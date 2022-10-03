@@ -1,2 +1,2 @@
-# JS-SPARQL-Exercise
+# JavaScriptによるSPARQL処理演習
 JavaScriptを用いてSPARQLを処理するプログラムの演習です
