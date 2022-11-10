@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>JavaScriptを用いたSPARQL処理</title>
+
+<link rel="stylesheet" href="style.css">
+<!--KG検索用のライブラリ（https://kgs.hozo.jp/にて公開）の読み込み-->
+<script src="KGSearch.js"></script>
+
+<script>
+window.addEventListener('load', async () => {
+    const sendButton = document.getElementById('send');
+	//検索実行ボタンで実行する処理
+	sendButton.addEventListener('click', async () => {
+        makeQuery();
+	}, false);
+
+}, false);
+
+//SPARQLクエリを実行する
+async function makeQuery(){
+	//SPARQLエンドポイントの指定
+    let endpoint = "https://query.wikidata.org/sparql";
+
+    //結果の表示領域
+	const resultArea = document.getElementById('result_div');	
+            
+	//SPARQLクエリの取得
+    //入力したIDを取得
+    let dataINPUT = document.getElementById('data_input').value;
+    let labels = dataINPUT.split('\n');
+
+     for(let i=0;i<labels.length;i++){
+        let label = labels[i];
+        console.log('label='+label)
+
+        if(label!=""){
+            //SPARQLクエリ中の"#INPUT#"をqidで置き換える
+            let query = document.getElementById('query_area').value
+            query = query.replace("#INPUT#",label);
+            
+            //SPARQLクエリの実行処理	
+            dispLoading("検索中...");//検索中の画像表示	
+            const resultData = await sendSPARQLQuery(endpoint, query);//SPARQLクエリの実行
+            removeLoading();//検索中の画像を削除
+        
+            //SPARQLクエリの実行結果の表示処理
+            document.getElementById('resjson_area').value = JSON.stringify(resultData,null,'  ');
+            
+            showResult(resultData,resultArea); //クエリ結果の表示
+            }     
+    }
+    
+    //結果をダウンロード
+    downloadText("result.txt",resultArea.innerHTML);
+}
+
+function showResult(resultData,resultArea){    
+	const keys = resultData.head.vars; //戻り値の変数一覧を格納する配列
+	const data = resultData.results.bindings;//戻り値のデータを格納する配列（JSON）
+
+	let mesText ='';//表示内容を作成するための変数	
+    for (let i=0; i<data.length;i++){
+        for (let k=0; k<keys.length;k++){
+            if(k>0){//2列目以降の時は「,」を足す
+                mesText += ',';
+            }
+            mesText += showRDFdata(data[i][keys[k]]);
+        }
+        //一行分の処理の終わりに「改行」を足す
+        mesText += '<br>\n';
+    }
+
+	resultArea.innerHTML += mesText;//結果を表示する領域のHTMLを書き換える
+}
+
+function showRDFdata(val){
+    let mesText ="";
+
+    if(val.type == "uri"){
+            mesText += '<a href="'+val.value+'" target="_blank">'
+                     +  val.value + '</a>';
+        }
+    else if(val.type == "literal"){
+        if(val['xml:lang'] != null){
+            mesText += val.value + '@' + val['xml:lang'];
+        }
+        else if(val.datatype != null){
+            mesText += val.value + '^^' + val.datatype;
+        }
+        else{
+            mesText += val.value; 
+        }
+    }
+    else{
+        mesText += val.value; 
+    }
+     
+    return mesText;
+}
+
+function downloadText(fileName, text) {
+    const blob = new Blob([text], { type: 'text/plain' });
+    const aTag = document.createElement('a');
+    aTag.href = URL.createObjectURL(blob);
+    aTag.target = '_blank';
+    aTag.download = fileName;
+    aTag.click();
+    URL.revokeObjectURL(aTag.href);
+  }
+
+</script>
+</head>
+
+<body>
+<header id="head" >
+	<h1>SPARQLを用いた検索システム【テンプレート】</h1>
+</header>
+<div id="menu" class="container">
+<input type="button" id="send" value="検索の実行" style="margin-top:8px; "><br>
+</div>
+<!-- 検索条件設定の領域 -->
+<div id="query" class="container">
+<b>データ入力</b><br>
+<textarea id="data_input" class="t_area" rows="10">
+大阪府
+京都府
+兵庫県    
+</textarea>
+<br>
+<b>SPARQLクエリ</b><br>
+<textarea id="query_area" class="t_area" rows="10">
+SELECT ?s ?sLabel 
+WHERE{
+?s ?p "#INPUT#"@ja.
+SERVICE wikibase:label { bd:serviceParam wikibase:language "ja". }
+}           
+</textarea>
+<br>
+<b>クエリ実行結果の戻り値(JSON形式）</b><br>
+<textarea id="resjson_area"  class="t_area" rows="10" ></textarea>
+</div>
+
+<!-- 結果表示用の領域 -->
+<div id="result_div"  class="container" style="flex: 1;"></div>
+</body>
+</html>
