@@ -8,3 +8,6 @@ https://github.com/oecu-kozaki-lab/JS-SPARQL-Exercise/blob/main/JS-SPARQL-Dev.md
 
 ## 3.JavaScriptを用いたSPARQL処理の応用【仮】
 https://github.com/oecu-kozaki-lab/JS-SPARQL-Exercise/blob/main/JS-SPARQL-Appl.md
+
+## 4.JavaScriptを用いたSPARQL処理の自動化【仮】
+https://github.com/oecu-kozaki-lab/JS-SPARQL-Exercise/blob/main/JS-SPARQL-Auto.md
