@@ -20,6 +20,6 @@ Ex2-1.htmlを改良して，「任意のSPARQLクエリ」を入力し，結果�
 
 ### 2-5) 任意のSPARQLクエリの結果表示処理【HTML表】
 Ex2-4.htmlを改良して，「任意のSPARQLクエリ」を入力し，結果を「HTMLの表」として表示するプログラムを作成しなさい．【Ex2-5.htmlとする】
-- ヒント：HTMLのTABLEタグの利用については，Webサイトで入門ページを探すとよい
-- ヒント：KGSerach.jsの`function showResult(resultData,resultArea)`関数も参考には出来るは，セルの結合や検索システム用の個別設定が含まれているため，コードが複雑になっているので注意
-  　
+- ヒント：HTMLのTABLEタグの利用については，Webサイトで入門ページを探すとよい（例えば，[こちら](https://webst8.com/blog/html-table/)）
+- ヒント：KGSerach.jsの`function showResult(resultData,resultArea)`関数も参考には出来るが，「セルの結合」や「検索システム用の個別設定」が含まれているため，コードが複雑になっているので注意
+  
