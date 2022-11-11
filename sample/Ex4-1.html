@@ -28,7 +28,8 @@ async function makeQuery(){
 
     //結果の表示領域
 	const resultArea = document.getElementById('result_div');	
-            
+    resultArea.innerHTML="";//結果の表示領域をクリア
+
 	//SPARQLクエリの取得
     //入力したIDを取得
     let dataINPUT = document.getElementById('data_input').value;
