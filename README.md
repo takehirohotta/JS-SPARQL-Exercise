@@ -1,7 +1,9 @@
 # JavaScriptによるSPARQL処理演習
 JavaScriptを用いてSPARQLを処理するプログラムの演習です
 ## 1.JavaScriptを用いたSPARQL処理の基礎
-https://github.com/oecu-kozaki-lab/JS-SPARQL-Exercise/blob/main/JS-SPARQL-Basic.md
+- ［問題］(https://github.com/oecu-kozaki-lab/JS-SPARQL-Exercise/blob/main/JS-SPARQL-Basic.md)
+- ［問題＋解答例］(https://github.com/oecu-kozaki-lab/JS-SPARQL-Exercise/blob/main/JS-SPARQL-Basic-ans.md)
+
 
 ## 2.JavaScriptを用いたSPARQL処理の発展問題
 https://github.com/oecu-kozaki-lab/JS-SPARQL-Exercise/blob/main/JS-SPARQL-Dev.md
