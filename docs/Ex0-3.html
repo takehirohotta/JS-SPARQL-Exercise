@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+<meta charset="UTF-8">
+<title>JavaScriptの基本的な処理</title>
+
+<!-- JavaScriptのプログラムは<script>タグで囲んだところに記述する -->
+<script>
+// このWebページが表示された（＝loadされた）時に実行される処理の記述
+window.addEventListener('load', () => {
+    //idを指定して「ボタン」を取得する
+	const sendButton = document.getElementById('send');
+    // ボタンが押された（＝clickされた）時に実行される処理の記述
+    sendButton.addEventListener('click', () => {
+        let input = document.getElementById('text_area').value;
+        //alert(input);
+        const reslutDiv = document.getElementById('result_div');
+        // innerHTMLを使うときは，改行コードをHTMLの<br>タグに置き換えることで正しく改行できる      
+        reslutDiv.innerHTML=input.replaceAll('\n','<br>'); 
+        //「+=」にすると，「ボタンを押すごとに追加」が可能
+        //reslutDiv.innerHTML+=input.replaceAll('\n','<br>'); 
+        // innerHTMLの代わりにinnerTextをつかうと「文字列」として処理されるので，<br>タグへの置き換えは不要
+        // reslutDiv.innerText=input;                
+    }, false);
+}, false);
+</script>
+</head>
+
+<!-- Webページに表示する内容は<body>タグで囲まれた範囲に記述する -->
+<body>
+<h1>JavaScriptの基本的な処理</h1>
+<!-- テキスト入力欄の配置 -->
+<textarea id="text_area" rows="10" cols="60">
+ここにテキストを入力する．     
+</textarea>
+<br>
+<!-- ボタンの配置 -->
+<input type="button" id="send" value="実行"><br>
+<hr>
+<!-- 結果表示用の領域（Ex0-1.htmlでは未使用） -->
+<div id="result_div">
+</div>
+</body>
+</html>
