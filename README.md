@@ -2,7 +2,7 @@
 JavaScriptを用いてSPARQLを処理するプログラムの演習です．  
 JavaScriptの基本的な使い方は，
 - [MDNのチュートリアル](https://developer.mozilla.org/ja/docs/Learn/Getting_started_with_the_web/JavaScript_basics)
-- [JavaDriveのJavaScript入門](https://www.javadrive.jp/javascript/)
+- [JavaDriveのJavaScript入門](https://www.javadrive.jp/javascript/)  
 などを参照する
  
 ## 1.JavaScriptの基礎
