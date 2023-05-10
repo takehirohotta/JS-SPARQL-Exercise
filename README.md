@@ -4,7 +4,7 @@ JavaScriptの基本的な使い方は，下記のサイトなどを参考にす�
 - [MDNのチュートリアル](https://developer.mozilla.org/ja/docs/Learn/Getting_started_with_the_web/JavaScript_basics)
 - [JavaDriveのJavaScript入門](https://www.javadrive.jp/javascript/)  
  
-## 1.JavaScriptの基礎
+## 0.JavaScriptの基礎
 - [問題＋解答例](https://github.com/oecu-kozaki-lab/JS-SPARQL-Exercise/blob/main/JS-Basic+ans.md)
 
 
