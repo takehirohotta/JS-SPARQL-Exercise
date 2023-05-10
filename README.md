@@ -5,7 +5,7 @@ JavaScriptの基本的な使い方は，下記のサイトなどを参考にす�
 - [JavaDriveのJavaScript入門](https://www.javadrive.jp/javascript/)  
  
 ## 0.JavaScriptの基礎
-- [問題]
+- [問題](https://github.com/oecu-kozaki-lab/JS-SPARQL-Exercise/blob/main/JS-Basic.md)  
 
 ## 1.JavaScriptを用いたSPARQL処理の基礎
 - [問題](https://github.com/oecu-kozaki-lab/JS-SPARQL-Exercise/blob/main/JS-SPARQL-Basic.md)
