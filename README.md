@@ -1,5 +1,10 @@
 # JavaScriptによるSPARQL処理演習
-JavaScriptを用いてSPARQLを処理するプログラムの演習です
+JavaScriptを用いてSPARQLを処理するプログラムの演習です．  
+JavaScriptの基本的な使い方は，
+- [MDNのチュートリアル](https://developer.mozilla.org/ja/docs/Learn/Getting_started_with_the_web/JavaScript_basics)
+- [JavaDriveのJavaScript入門](https://www.javadrive.jp/javascript/)
+などを参照する
+ 
 ## 1.JavaScriptの基礎
 - [問題＋解答例](https://github.com/oecu-kozaki-lab/JS-SPARQL-Exercise/blob/main/JS-Basic+ans.md)
 
