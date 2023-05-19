@@ -1,6 +1,6 @@
 # JavaScriptを用いたSPARQL処理の基礎
 ## 演習課題1 
-- 演習には「templete」フォルダにあるコードを利用すること  
+- 演習には[「templete」](https://github.com/oecu-kozaki-lab/JS-SPARQL-Exercise/tree/main/templete)フォルダにあるコードを利用すること  
 - 回答例は「sample」フォルダを参照 
 ### 1-1) SPARQLクエリ実行の基本テンプレートの動作確認 
 Ex1-1.htmlを実行し，WikidataのSPARQLエンドポイントで`SELECT ?o WHERE{wd:Q7105556 wdt:P131 ?o.} `というSPARQLクエリを実行して，得られた?oの値を表示するプログラムの動作の仕組みを確認しなさい．  
