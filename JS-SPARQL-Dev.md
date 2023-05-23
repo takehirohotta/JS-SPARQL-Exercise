@@ -1,11 +1,11 @@
 # JavaScriptを用いたSPARQL処理の発展問題
 ## 演習課題2 
 - 演習には「templete」フォルダにあるコードを利用すること 
-- 演習課題1で作成したコードを利用するので先に演習課題1を済ませておくこと 
+- [演習課題1](https://github.com/oecu-kozaki-lab/JS-SPARQL-Exercise/blob/main/JS-SPARQL-Basic.md)で作成したコードを利用するので先に演習課題1を済ませておくこと 
 - 最終的な2-5の動作イメージは[こちら](https://oecu-kozaki-lab.github.io/JS-SPARQL-Exercise/Ex2-5.html)を参照 
 
 ### 2-1) SPARQLクエリの結果表示の汎用化 
-演習課題1-3,4で作成したプログラム（Ex1-4.html）をSPARQLクエリ`SELECT ?p ?o WHERE{wd:Q7105556 ?p ?o.} `で，得られた?pおよび?oの両方の表示に利用できるように修正したプログラムを作成しなさい．【Ex2-1.htmlとする】
+[演習課題1-3,4](https://github.com/oecu-kozaki-lab/JS-SPARQL-Exercise/blob/main/JS-SPARQL-Basic.md#1-3-%E7%B5%90%E6%9E%9C%E3%81%AE%E3%83%AA%E3%83%B3%E3%82%AF%E5%87%A6%E7%90%86)で作成したプログラム（Ex1-4.html）をSPARQLクエリ`SELECT ?p ?o WHERE{wd:Q7105556 ?p ?o.} `で，得られた?pおよび?oの両方の表示に利用できるように修正したプログラムを作成しなさい．【Ex2-1.htmlとする】
   
 ### 2-2) 入力したデータを用いたSPARQLクエリ生成例 
 Ex2-1.htmlを改良して，Webページから入力した任意のQID（wd:Qxxxxとする）を主語とする述語(?p)，目的語(?o)を取得するSPARQLクエリ`SELECT ?p ?o WHERE{wd:Qxxxx ?p ?o.} `で，得られた結果を表示するプログラムを作成しなさい．【Ex2-2.htmlとする】
