@@ -2,7 +2,8 @@
 ## 演習課題2 
 - 演習には「templete」フォルダにあるコードを利用すること 
 - 演習課題1で作成したコードを利用するので先に演習課題1を済ませておくこと 
-- 回答例は「sample」フォルダを参照 
+- 最終的な2-5の動作イメージは[こちら](https://oecu-kozaki-lab.github.io/JS-SPARQL-Exercise/Ex2-5.html)を参照 
+
 ### 2-1) SPARQLクエリの結果表示の汎用化 
 演習課題1-3,4で作成したプログラム（Ex1-4.html）をSPARQLクエリ`SELECT ?p ?o WHERE{wd:Q7105556 ?p ?o.} `で，得られた?pおよび?oの両方の表示に利用できるように修正したプログラムを作成しなさい．【Ex2-1.htmlとする】
   
@@ -12,7 +13,7 @@ Ex2-1.htmlを改良して，Webページから入力した任意のQID（wd:Qxxx
 
 ### 2-3) SPARQLクエリの結果表示の汎用化 
 Ex2-2.htmlを改良して，任意のQID（wd:Qxxxxとする）の入力を`..../Ex2-3.html?id=Qxxxx`のようにURLのパラメータとして指定できるようにしたプログラムを作成しなさい．【Ex2-3.htmlとする】
-- ヒント：https://github.com/oecu-kozaki-lab/KGSearchForWD/blob/main/sample/details.html などを参考する
+- ヒント：https://github.com/oecu-kozaki-lab/KGSearchForWD/blob/main/sample/details.html , [情報工学実験の課題](https://drive.google.com/drive/u/0/folders/1XSfxHDPUPODmXQxbCXPLWyyTTWKQjguu)などを参考する
 
 ### 2-4) 任意のSPARQLクエリの結果表示処理【CSV出力】
 Ex2-1.htmlを改良して，「任意のSPARQLクエリ」を入力し，結果を「カンマ区切り」で表示するプログラムを作成しなさい．【Ex2-4.htmlとする】
