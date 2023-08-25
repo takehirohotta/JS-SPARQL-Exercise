@@ -2,7 +2,7 @@
 ## 演習課題4 
 - 演習には「templete」フォルダにあるコードを利用すること 
 - 回答例は「sample」フォルダを参照 
-### 4-1) SPARQLクエリの結果表示の汎用化 
+### 4-1) 入力したデータ（単語のリスト）に応じたSPARQLクエリの作成+自動実行 
 演習課題2-4で作成したプログラム（Ex2-4.html）を利用してSPARQLクエリ
 ```
 SELECT ?s ?sLabel 
@@ -19,7 +19,7 @@ SERVICE wikibase:label { bd:serviceParam wikibase:language "ja". }
 ```
 のような1行ごとに１単語を記入したテキストに置き換えて，連続で実行するプログラムを作成しなさい．【Ex4-1.htmlとする】
   
-### 4-2) SPARQLクエリの結果表示の汎用化 
+### 4-2) 入力したCSVデータに応じたSPARQLクエリの作成+自動実行 
 演習課題4-1で作成したプログラム（Ex4-1.html）を改良してSPARQLクエリ
 ```
 select DISTINCT ?s ?sLabel ?o ?oLabel
