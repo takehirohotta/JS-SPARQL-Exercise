@@ -130,7 +130,8 @@ WHERE{
     ?item wdt:P17 wd:Q17.
     ?item wdt:P2048 ?h.
     SERVICE wikibase:label { bd:serviceParam wikibase:language "ja". }
-}
+}ORDER BY DESC(?h)
+LIMIT 10
 </textarea>
 <br>
 <b>クエリ実行結果の戻り値(JSON形式）</b><br>
