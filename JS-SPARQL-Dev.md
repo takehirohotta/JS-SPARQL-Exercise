@@ -9,13 +9,13 @@
 - ヒント：演習課題1-3.4で作成した「?pや?oを表示するための処理」を関数として呼び出せるよう共通化すればよい
   
 ### 2-2) 入力したデータを用いたSPARQLクエリ生成例 
-Ex2-1.htmlを改良して，「Webページに用意した入力欄で指定した任意のQID（wd:Qxxxxとする）」を主語とする述語(?p)，目的語(?o)を取得するSPARQLクエリ`SELECT ?p ?o WHERE{wd:Qxxxx ?p ?o.} `で，得られた結果を表示するプログラムを作成しなさい．【Ex2-2.htmlとする】
+Ex2-1.htmlを改良して，「Webページに用意した入力欄で指定した任意のQID（wd:Qxxxxとする）」を主語とする述語(?p)，目的語(?o)を取得するSPARQLクエリ`SELECT ?p ?o WHERE{wd:Qxxxx ?p ?o.} `で，得られた結果を表示するプログラムを作成しなさい．【Ex2-2.htmlとする】 
 - ヒント：クエリ欄から得た「クエリのID部分」を「入力欄から得たQID」で置き換えてから検索を実行すればよい  
 - ヒント：https://github.com/oecu-kozaki-lab/KGSearchForWD/blob/main/sample/template.html などを参考する
 
 ### 2-3) SPARQLクエリの結果表示の汎用化 
-Ex2-2.htmlを改良して，任意のQID（wd:Qxxxxとする）の入力を`..../Ex2-3.html?id=Qxxxx`のようにURLのパラメータとして指定できるようにしたプログラムを作成しなさい．【Ex2-3.htmlとする】
-‐ ヒント：URLのパラメータは`location.search`で取得できる[参考](https://www.javadrive.jp/javascript/webpage/index10.html)
+Ex2-2.htmlを改良して，任意のQID（wd:Qxxxxとする）の入力を`..../Ex2-3.html?id=Qxxxx`のようにURLのパラメータとして指定できるようにしたプログラムを作成しなさい．【Ex2-3.htmlとする】  
+- ヒント：URLのパラメータは`location.search`で取得できる（[参考](https://www.javadrive.jp/javascript/webpage/index10.html)）  
 - ヒント：https://github.com/oecu-kozaki-lab/KGSearchForWD/blob/main/sample/details.html , [情報工学実験の課題](https://drive.google.com/drive/u/0/folders/1XSfxHDPUPODmXQxbCXPLWyyTTWKQjguu)などを参考する
 
 ### 2-4) 任意のSPARQLクエリの結果表示処理【CSV出力】
