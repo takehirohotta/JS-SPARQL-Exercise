@@ -55,7 +55,7 @@ function showResult(resultData,resultArea){
             mesText += '<a href="'+data[i]['o'].value+'" target="_blank">'
                      +  data[i]['o'].value + '</a>';
         }
-        if(data[i]['o'].type == "literal"){
+        else if(data[i]['o'].type == "literal"){
             if(data[i]['o']['xml:lang'] != null){
                 mesText += data[i]['o'].value + '@' + data[i]['o']['xml:lang'];
             }
