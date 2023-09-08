@@ -57,7 +57,7 @@ async function makeQuery(){
     }
     
     //結果をダウンロード
-    downloadText("result.txt",resultArea.innerHTML);
+    //downloadText("result.txt",resultArea.innerHTML);
 }
 
 function showResult(resultData,resultArea){    
@@ -75,6 +75,7 @@ function showResult(resultData,resultArea){
         //一行分の処理の終わりに「改行」を足す
         mesText += '<br>\n';
     }
+    mesText += '--------------------<br>\n';
 
 	resultArea.innerHTML += mesText;//結果を表示する領域のHTMLを書き換える
 }
@@ -130,7 +131,7 @@ function downloadText(fileName, text) {
 <textarea id="data_input" class="t_area" rows="10">
 大阪府
 京都府
-兵庫県    
+兵庫県
 </textarea>
 <br>
 <b>SPARQLクエリ</b><br>
