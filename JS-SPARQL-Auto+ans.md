@@ -15,7 +15,7 @@ SERVICE wikibase:label { bd:serviceParam wikibase:language "ja". }
 ```
 大阪府
 京都府
-兵庫県 
+兵庫県
 ```
 のような1行ごとに１単語を記入したテキストに置き換えて，連続で実行するプログラムを作成しなさい．【Ex4-1.htmlとする】
   
