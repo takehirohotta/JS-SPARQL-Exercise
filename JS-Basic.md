@@ -22,6 +22,7 @@ Ex0-2.htmlを修正して，ボタンを押すと，開いているWebページ�
 Ex0-3.htmlを修正して，１行分のテキストを入力する「キーワード入力欄」を追加なさい．  
 その上で，ボタンを押すと，開いているWebページの下部に表示される「テキスト入力欄（複数行入力可能）に入力したテキスト」中で，「キーワード入力欄」に入力したキーワードが「強調表示」されるプログラムを作りなさい．  
 - 強調表示の仕方は，「太字にする」，「背景の色を変える」など，いくつか試すこと
-- 複数のキーワードを「半角スペース区切り」で入力し，それぞれのキーワードに一致する箇所を強調表示できるような拡張も行う【[解答例](https://oecu-kozaki-lab.github.io/JS-SPARQL-Exercise/Ex0-4b.html) 】 
-
+- 複数のキーワードを「半角スペース区切り」で入力し，それぞれのキーワードに一致する箇所を強調表示できるような拡張も行う  
+【[解答例1](https://oecu-kozaki-lab.github.io/JS-SPARQL-Exercise/Ex0-4b2.html), [ソースコード](https://github.com/oecu-kozaki-lab/JS-SPARQL-Exercise/blob/main/docs/Ex0-4b2.html)】
+【[解答例2](https://oecu-kozaki-lab.github.io/JS-SPARQL-Exercise/Ex0-4b.html), [ソースコード](https://github.com/oecu-kozaki-lab/JS-SPARQL-Exercise/blob/main/docs/Ex0-4b.html)】  
 ヒント（使う関数の例）：replaceAll，split，forEachなどを使うとよい．  
