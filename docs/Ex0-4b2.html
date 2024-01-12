@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+<meta charset="UTF-8">
+<title>JavaScriptの基本的な処理</title>
+
+<!-- JavaScriptのプログラムは<script>タグで囲んだところに記述する -->
+<script>
+// このWebページが表示された（＝loadされた）時に実行される処理の記述
+window.addEventListener('load', () => {
+    //idを指定して「ボタン」を取得する
+	const sendButton = document.getElementById('send');
+    // ボタンが押された（＝clickされた）時に実行される処理の記述
+    sendButton.addEventListener('click', () => {
+        let key = document.getElementById('keyword').value;
+        let input = document.getElementById('text_area').value;
+        //alert(input);
+        const reslutDiv = document.getElementById('result_div');     
+        
+        //キーワードを' '区切りで分割して配列に
+        let keys = key.split(' ');
+        //配列から要素を1つずつとりだして処理を実行
+        for (let i = 0 ;i < keys.length; i++){
+        		input = input.replaceAll('\n','<br>')
+						.replaceAll(keys[i],'<b style="background:yellow">'+keys[i]+'</b>');         
+		};
+		reslutDiv.innerHTML=input;
+	}, false);
+}, false);
+</script>
+</head>
+
+<!-- Webページに表示する内容は<body>タグで囲まれた範囲に記述する -->
+<body>
+<h1>JavaScriptの基本的な処理</h1>
+<!-- テキスト入力欄の配置 -->
+<input type="text" id="keyword" value="知識 LOD" >
+<br>
+<textarea id="text_area" rows="10" cols="60">
+知識グラフ（ナレッジグラフ;Knowledge Graph）とは
+さまざまな知識のつながりをグラフ構造で表したものを「知識グラフ（ナレッジグラフ）」と呼びます．
+知識グラフは，さまざまな知的システム/AIシステムの開発に利用されています．
+
+知識グラフの例には，Wikipediaの情報を基にした Wikidataや DBpedia(日本語版はこちら)， GoogleによるGoogle Knowledge Graphなどがあります．
+
+知識グラフのなかには，Webの仕組みを用いて相互にリンクされたデータであるLinked Dataとして公開されているものが多くあります．Linked Dataのなかでも特に，誰でも自由に利用できるオープンデータ(Open Data)として公開されたものはLinked Opne Data(LOD)と呼ばれます．LODは2007年頃から様々な分野で進められた，
+
+その広がり（の一部）は，The Linked Open Data Cloud（LODクラウド）という図でまとめられています． 上述のWikidataやDBpediaは，LODクラウドの中でも多くのデータとつながっているハブ的なLODと位置づけられています．    
+</textarea>
+<br>
+<!-- ボタンの配置 -->
+<input type="button" id="send" value="実行"><br>
+<hr>
+<!-- 結果表示用の領域（Ex0-1.htmlでは未使用） -->
+<div id="result_div">
+</div>
+</body>
+</html>
