@@ -46,21 +46,34 @@ function showResult(resultData,resultArea){
 	const data = resultData.results.bindings;//戻り値のデータを格納する配列（JSON）
 
 	let mesText ='';//表示内容を作成するための変数	
-    for (let i=0; i<data.length;i++){
+	for (let i=0; i<data.length;i++){
         mesText += data[i]['p'].value; //i番目のデータの「変数=?p」に格納された「値」を取得
         mesText += '\t---\t';
 
         //i番目のデータの「変数=?o」に格納された「値」を取得
         if(data[i]['o'].type == "uri"){
             mesText += '<a href="'+data[i]['o'].value+'" target="_blank">'
-                     +  data[i]['o'].value + '</a>';
+                    	+ data[i]['o'].value + '</a>';
         }
+		else if(data[i]['o'].type == "literal") {
+    		// まず基本の値を表示
+    		mesText += data[i]['o'].value;
+    
+    		// 言語情報があれば追加
+    		if(data[i]['o']['xml:lang'] != null) {
+        		mesText += '@' + data[i]['o']['xml:lang'];
+    		}
+    
+    		// データタイプがあれば追加
+    		if(data[i]['o'].datatype != null) {
+    			mesText += '^^' + data[i]['o'].datatype;
+			}
+		}
         else{
             mesText += data[i]['o'].value; 
         }
         mesText += '<br>\n';
-    }
-
+	}
 	resultArea.innerHTML = mesText;//結果を表示する領域のHTMLを書き換える
 }
 

@@ -49,8 +49,15 @@ function showResult(resultData,resultArea){
     for (let i=0; i<data.length;i++){
         mesText += data[i]['p'].value; //i番目のデータの「変数=?p」に格納された「値」を取得
         mesText += '\t---\t';
-        mesText += data[i]['o'].value; //i番目のデータの「変数=?o」に格納された「値」を取得
-        mesText += '<br>\n';
+		console.log(data[i]['o'].type)
+        if (data[i]['o'].type==='uri'){
+			mesText += '<a href="'+data[i]['o'].value+'"target="_blank">'+data[i]['o'].value+'</a>'
+		}else{
+		mesText += data[i]['o'].value; //i番目のデータの「変数=?o」に格納された「値」を取得
+		}
+		
+		
+		mesText += '<br>\n';
     }
 
 	resultArea.innerHTML = mesText;//結果を表示する領域のHTMLを書き換える

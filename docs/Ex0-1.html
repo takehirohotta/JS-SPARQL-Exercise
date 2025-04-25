@@ -11,9 +11,10 @@
 window.addEventListener('load', () => {
     //idを指定して「ボタン」を取得する
 	const sendButton = document.getElementById('send');
+    const textinput = document.getElementById('textinput');
     // ボタンが押された（＝clickされた）時に実行される処理の記述
     sendButton.addEventListener('click', () => {
-        alert("Hello Wolrd!");
+        alert(textinput.value);
     }, false);
 }, false);
 </script>
@@ -22,6 +23,7 @@ window.addEventListener('load', () => {
 <!-- Webページに表示する内容は<body>タグで囲まれた範囲に記述する -->
 <body>
 <h1>JavaScriptの基本的な処理</h1>
+<textarea id="textinput" name="story" rows="5" cols="33">test</textarea>
 <!-- ボタンの配置 -->
 <input type="button" id="send" value="実行"><br>
 <hr>

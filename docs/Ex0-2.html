@@ -11,12 +11,15 @@
 window.addEventListener('load', () => {
     //idを指定して「ボタン」を取得する
 	const sendButton = document.getElementById('send');
+    const text_area = document.getElementById('text_area')
+    const innerTextOutput = document.getElementById("outputtext")
     // ボタンが押された（＝clickされた）時に実行される処理の記述
     sendButton.addEventListener('click', () => {
         let input = document.getElementById('text_area').value;
         alert(input);
-    }, false);
+        innerTextOutput.value += text_area.value
 }, false);
+});
 </script>
 </head>
 
@@ -24,15 +27,15 @@ window.addEventListener('load', () => {
 <body>
 <h1>JavaScriptの基本的な処理</h1>
 <!-- テキスト入力欄の配置 -->
-<textarea id="text_area" rows="10" cols="60">
-ここにテキストを入力する．     
-</textarea>
+<textarea id="text_area" rows="10" cols="60">テキストを入力する</textarea>
 <br>
 <!-- ボタンの配置 -->
 <input type="button" id="send" value="実行"><br>
 <hr>
 <!-- 結果表示用の領域（Ex0-1.htmlでは未使用） -->
 <div id="result_div">
+    <h3>結果</h3>
+    <textarea id="outputtext"rows="10"cols="60">結果</textarea>
 </div>
 </body>
 </html>
